@@ -1,14 +1,14 @@
---µ¥ÀÌÅÍ±¸Á¶
+--ë°ì´í„°êµ¬ì¡°
 desc emp;
 select * from emp;
 select ename,job from emp;
---Å×ÀÌºí±¸Á¶
+--í…Œì´ë¸”êµ¬ì¡°
 desc professor;
 select * from professor;
 select name from professor;
-select name,'good morning~~!' "ÀÎ»ç" from professor;
+select name,'good morning~~!' "ì¸ì‚¬" from professor;
 select dname,'it''s deptno:', deptno "DNAME AND DEPTNO" from dept;
 select dname,'it''s deptno:'|| deptno "DNAME AND DEPTNO" from dept;
 select dname, q'[, it's deptno : ]' , deptno " DNAME AND DEPTNO" from dept;
-select profno "±³¼ö´Ô ¹øÈ£", name ÀÌ¸§,pay as "±Ş¿©" from professor;
+select profno "êµìˆ˜ë‹˜ ë²ˆí˜¸", name ì´ë¦„,pay as "ê¸‰ì—¬" from professor;
 
