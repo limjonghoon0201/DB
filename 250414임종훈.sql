@@ -1,38 +1,36 @@
+--2025년 4월 14일 1장 Select 연습문제
 select * from emp;
---입력값이 첫 글자만 대문자로 변환
-select ename, initcap(ename) "INITCAR" from emp where deptno=10;
---소문자, 대문자 변환
-select ename, lower(ename) "LOWER", upper(ename) "UPPER" from emp where deptno=10;
---길이
-select ename, length(ename), lengthb(ename) from emp where deptno=20;
-select '홍길동', length('홍길동'), lengthb('홍길동') from dual;
---글자 추출
-select substr('abcde',3,2) "3,2", substr('abcde',-3,2), substr('abcde',-3,4) from dual;
---student테이블에서 jumin컬럼을 사용해서 1전공이 101번인 학생들의 이름과 태어난 월일,생일, 하루 전 날짜를 출력하세요(050413-3111111)
-select * from student;
-select name, substr(jumin,3,4)-1 "Birthday-1" from student where deptno1=101;
---'-'이 3번째 나오는 위치
-select 'A-B-C-D', instr('A-B-C-D','-',1,3) "INSTR" from dual;
---student 테이블에서 1전공이 101번인 학생들의 tel컬럼을 조회하여 3이 첫번째로 나오는 위치를 이름과 전화번호와 함께 출력
-select name, tel, instr(tel,'3'), profno from student where deptno1=101;
---INSTR:특정문자 위치 추출
-select 'A-B-C-D', instr('A-B-C-D','-',1,3) "INTSTR" from dual;
-select name, tel, instr(tel,'3'), profno from student where deptno1 = 101;
---LPAD:왼쪽에 특정 문자 채움
-select name, id, lpad(id, 10, '*') from student where deptno1 = 201;
-select name, id, lpad(id, 10, '123456') from student where deptno1 = 201;
-select lpad(ename, 9, '123456789') from emp where deptno = 10;
---RPAD:오른쪽에 특정 문자 채움
-select name, id, rpad(id, 10, '*') from student where deptno1 = 201;
-select rpad(ename, 10, '-') from emp where deptno = 10;
-select rpad(ename, 9, substr('123456789',lengthb(ename)+1)) from emp where deptno = 10;
-select rpad(ename, 9, '123456789') from emp where deptno = 10;
---LTRIM:주어진 문자열에서 왼쪽 문자 삭제
-select ename from emp where deptno=10;
-select ltrim(ename,'C') from emp where deptno=10;
---RTRIM:주어진 문자열에서 오른쪽 문자 삭제
-select rtrim(ename,'R') from emp where deptno=10;
---REPLACE:A를 B로 변환
-select ename, replace(ename,substr(ename,1,2), '**') from emp where deptno = 10;
-select ename ,replace(ename,substr(ename,2,2), '--') from emp where deptno = 20;
-select name, jumin, replace(jumin, substr(jumin,7,13), '-/-/-/-/') from student where deptno1 = 101;
+--1번
+select * from dept;
+--2번
+select job, empno, ename, hiredate from emp;
+--3번
+select distinct job from emp;
+--4번
+select ename, sal from emp where sal>=2850;
+--5번
+select ename, deptno from emp where mgr = 7566;
+--6번
+select ename, sal from emp where sal<=1500 or sal>=2850;
+--7번
+select ename, job, hiredate from emp where hiredate between'81/02/20' and'81/05/01' order by hiredate ASC;
+--8번
+select ename, deptno from emp where deptno=10 or deptno=30 order by ename;
+--9번
+select ename "employee" , sal "Monthly Salary" from emp where deptno=10 or deptno=30;
+--10번
+select ename from emp;
+--11번
+select ename, sal, comm from emp where comm is not null order by sal desc;
+--12번
+select ename from emp where substr(ename,3,1) = 'A';
+--13번
+select ename from emp where ename like '%L%' and length(ename) - length(replace(ename, 'L','')) = 2 and deptno = 30;
+--14번
+select ename, job, sal from emp where job in ('CLERK', 'ANALYST') and sal not in (1000,3000,5000);
+--15번
+select empno, ename, sal, floor(sal*1.15) "New Salary" from emp;
+--16번
+select empno, ename, sal, floor(sal*1.15) "New Salary", floor(sal *1.15) - sal "Increase" from emp;
+--17번
+select inicap(ename) "NAME", length(ename) "LENENAME" from emp;
