@@ -1,10 +1,10 @@
---¿ù
+--Â¿Ã¹
 select sysdate, to_char(sysdate) from dual;
 select sysdate, to_char(sysdate), to_char(sysdate,'mm'), to_char(sysdate,'mon'), to_char(sysdate,'month') from dual;
---ÀÏ
+--Ã€Ã
 select sysdate, to_char(sysdate) from dual;
 select sysdate, to_char(sysdate), to_char(sysdate,'dd'), to_char(sysdate,'day'), to_char(sysdate,'ddth') from dual;
---½Ã°£
+--Â½ÃƒÂ°Â£
 select sysdate, to_char(sysdate,'rrrr-mm-dd:hh24:mi:ss') from dual;
 
 select * from student;
