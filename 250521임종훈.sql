@@ -1,10 +1,10 @@
---¹¬½ÃÀû Çüº¯È¯
+--Â¹Â¬Â½ÃƒÃ€Ã» Ã‡Ã¼ÂºÂ¯ÃˆÂ¯
 select to_number('5') from dual;
 select to number('A') from dual;
 select ascii('A') from dual;
 select to_date('24/4/28')+1 from dual;
 select '24/4/28'+1 from dual;
---ÀÏ¹İÇÔ¼ö
+--Ã€ÃÂ¹ÃÃ‡Ã”Â¼Ã¶
 select ename, comm,nvl(comm,0),nvl(comm,100) from emp where deptno=30;
 select empno,ename,sal,comm,nvl2(comm,sal+comm,sal*0) "NVL2" from emp where deptno=30;
 select deptno, name, decode(deptno, 101, 'Computer Engineering') "DNAME" from professor;
