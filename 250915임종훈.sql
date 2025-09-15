@@ -13,5 +13,16 @@ union all
 select s.name stu_name, p.name prof_name from student s, professor p where s.profno = p.profno(+);
 
 select s.name, p.name from student s, professor p where s.profno(+) = p.profno;
+select s.name stu_name, p.name prof_name from professor p join student s on s.profno=p.profno;
 select s.name stu_name, p.name prof_name from professor p left outer join student s on s.profno=p.profno;
+
+select s.name stu_name, p.name prof_name from professor p right outer join student s on s.profno=p.profno;
+
+
+select s.name stu_name, p.name prof_name from professor p full outer join student s on s.profno=p.profno;
+
+select * from emp;
+select e1.empno, e1.ename, e1.mgr, e2.ename from emp e1, emp e2 where e1.empno=e2.mgr;
+
+
 
